@@ -43,3 +43,20 @@ class UserResponse(UserBase):
 class UserCreateDB(UserBase):
     uid: UUID
     hashed_password: str
+
+class UserUpdate(BaseModel):
+    username: str
+    email: EmailStr
+    yandex_id: Optional[None] = None
+
+class UserUpdateDB(BaseModel):
+    username: Optional[str] = None
+    email: EmailStr
+    yandex_id: Optional[None] = None
+
+
+class UserSuperuserUpdate(BaseModel):
+    is_superuser: bool
+
+class UserDelete(BaseModel):
+    user_id: int

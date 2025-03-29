@@ -12,7 +12,9 @@ class User(Base):
     __tablename__ = "user"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
-    yandex_id: Mapped[Optional[str]] = mapped_column(String, unique=True, index=True, nullable=True)
+    yandex_id: Mapped[Optional[int]] = mapped_column(
+        Integer, unique=True, index=True, nullable=True
+    )
     uid: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), unique=True, index=True, default=uuid.uuid4)
     username: Mapped[str] = mapped_column(String, nullable=False)
     email: Mapped[str] = mapped_column(String, unique=True, index=True)
