@@ -5,7 +5,7 @@ export ENVIRONMENT=local
 export PYTHONDONTWRITEBYTECODE=1
 
 # Путь к основному .env файлу
-MAIN_ENV=./src/.env
+MAIN_ENV=.env
 TEMPLATE_ENV=.env.example
 
 # Проверка наличия необходимых файлов
